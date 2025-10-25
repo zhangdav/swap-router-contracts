@@ -1,0 +1,7 @@
+module.exports = [
+    "0x3e24Cbe70FA7d22821147f81c8bA73741Cb509f8", // factory v2
+    "0x7074622D0f93780fE091E54f6f6663B0988C3f14", // factory v3
+    "0x3a8A4624fE3D97C2698c27c67B45f65439F3c506", // positionManager
+    "0xa546f28D23119D9cDD10F54f4c1E9a7E8D622F1f", // WETH
+  ];
+  

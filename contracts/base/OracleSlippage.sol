@@ -7,7 +7,7 @@ import '../interfaces/IOracleSlippage.sol';
 import '@uniswap/v3-periphery/contracts/base/PeripheryImmutableState.sol';
 import '@uniswap/v3-periphery/contracts/base/BlockTimestamp.sol';
 import '@uniswap/v3-periphery/contracts/libraries/Path.sol';
-import '@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol';
+import '../libraries/PotatoPoolAddress.sol';
 import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
 import '@uniswap/v3-periphery/contracts/libraries/OracleLibrary.sol';
 
@@ -51,7 +51,7 @@ abstract contract OracleSlippage is IOracleSlippage, PeripheryImmutableState, Bl
         address tokenB,
         uint24 fee
     ) internal view virtual returns (IUniswapV3Pool pool) {
-        pool = IUniswapV3Pool(PoolAddress.computeAddress(factory, PoolAddress.getPoolKey(tokenA, tokenB, fee)));
+        pool = IUniswapV3Pool(PotatoPoolAddress.computeAddress(factory, PotatoPoolAddress.getPoolKey(tokenA, tokenB, fee)));
     }
 
     /// @dev Returns the synthetic time-weighted average tick as of secondsAgo, as well as the current tick,

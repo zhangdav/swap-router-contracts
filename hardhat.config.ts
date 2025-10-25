@@ -1,5 +1,6 @@
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-etherscan'
+import '@okxweb3/hardhat-explorer-verify'
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-typechain'
 import 'hardhat-watcher'
@@ -51,6 +52,37 @@ export default {
     optimism: {
       url: `https://mainnet.optimism.io`,
     },
+    xlayer: {
+      url: "https://xlayer.drpc.org",
+      chainId: 196,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    },
+    xlayerTest: {
+      url: "https://testrpc.xlayer.tech/terigon",
+      chainId: 1952,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    }
+  },
+  okxweb3explorer: {
+    apiKey: process.env.OKLINK_API_KEY,
+    customChains: [
+      {
+        network: "xlayerTest",
+        chainId: 1952,
+        urls: {
+          apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER_TESTNET",
+          browserURL: "https://www.oklink.com/xlayer-test"
+        }
+      },
+      {
+        network: "xlayer",
+        chainId: 196,
+        urls: {
+          apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER",
+          browserURL: "https://www.oklink.com/xlayer"
+        }
+      }
+    ]
   },
   etherscan: {
     // Your API key for Etherscan
