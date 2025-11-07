@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
-const factoryV2 = "0x20707616bF84EccFe4a02e6FC78c27D474F4A0cC";
-const factoryV3 = "0x7074622D0f93780fE091E54f6f6663B0988C3f14";
-const positionManager = "0x3a8A4624fE3D97C2698c27c67B45f65439F3c506";
-const WETH = "0xa546f28D23119D9cDD10F54f4c1E9a7E8D622F1f";
+const factoryV2 = "0x630DB8E822805c82Ca40a54daE02dd5aC31f7fcF";
+const factoryV3 = "0xa1415fAe79c4B196d087F02b8aD5a622B8A827E5";
+const positionManager = "0xE6b5d25cc857c956bA20B73f4e21a1F1397947d8";
+const WETH = "0xe538905cf8410324e03A5A23C1c177a474D59b2b";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -25,7 +25,7 @@ async function main() {
 *  npx hardhat okverify --network xlayerTest \
 *     --contract contracts/SwapRouter02.sol:SwapRouter02 \
 *     your_swaprouter02_address \
-*     --constructor-args scripts/args/router.js
+*     --constructor-args scripts/args/router.ts
 */
 
 
